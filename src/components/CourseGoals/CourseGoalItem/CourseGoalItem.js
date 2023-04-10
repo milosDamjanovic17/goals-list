@@ -10,6 +10,7 @@ const CourseGoalItem = props => {
     props.onDelete(props.id);
   };
 
+  // will just render list item <li>
   return (
     <li className="goal-item" onClick={deleteHandler}>
       {props.children}
