@@ -32,7 +32,11 @@ const FormControl = Styled.div`
   border-color: #8b005d;
 }
 
-&.invalid input {
+
+`
+/**
+ *  THIS PEACE OF CODE IS REPLACED IN DYNAMIC WAY WITHIN CSS ATTRIBUTE IN STYLED COMPONENT FUNCTION
+ &.invalid input {
 
   border-color: red;
   background: rgb(255, 198, 198);
@@ -41,9 +45,10 @@ const FormControl = Styled.div`
 &.invalid label {
 
   color: red;
-}
 
-`
+ */
+
+
 
 const CourseInput = props => {
   const [enteredValue, setEnteredValue] = useState('');

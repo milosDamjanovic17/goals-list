@@ -30,6 +30,8 @@ const Button = Styled.button`
 `;
 
 
+// approach using JSX syntax
+
 // const Button = props => {
 //   return (
 //     <button type={props.type} className="button" onClick={props.onClick}>
