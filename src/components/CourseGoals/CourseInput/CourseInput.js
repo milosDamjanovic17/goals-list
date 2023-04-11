@@ -1,39 +1,40 @@
 import React, { useState } from 'react';
 import Styled from 'styled-components';
 import Button from '../../UI/Button/Button';
-import './CourseInput.css';
+import styles from './CourseInput.module.css';
 
-const FormControl = Styled.div`
+// APPROACH WITH STYLED-COMPONENTS
+// const FormControl = Styled.div`
 
-  margin: 0.5rem 0;
-
-
-& label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 0.5rem;
-  color: ${props => (props.invalid ? 'red' : 'black')}
-}
-
-& input {
-  display: block;
-  width: 100%;
-  border: 1px solid ${props => (props.invalid ? 'red' : '#ccc')};
-  background: ${props => (props.invalid ? '#ffd7d7' : 'transparent')}
-  font: inherit;
-  line-height: 1.5rem;
-  padding: 0 0.25rem;
-}
+//   margin: 0.5rem 0;
 
 
-& input:focus {
-  outline: none;
-  background: #fad0ec;
-  border-color: #8b005d;
-}
+// & label {
+//   font-weight: bold;
+//   display: block;
+//   margin-bottom: 0.5rem;
+//   color: ${props => (props.invalid ? 'red' : 'black')}
+// }
+
+// & input {
+//   display: block;
+//   width: 100%;
+//   border: 1px solid ${props => (props.invalid ? 'red' : '#ccc')};
+//   background: ${props => (props.invalid ? '#ffd7d7' : 'transparent')}
+//   font: inherit;
+//   line-height: 1.5rem;
+//   padding: 0 0.25rem;
+// }
 
 
-`
+// & input:focus {
+//   outline: none;
+//   background: #fad0ec;
+//   border-color: #8b005d;
+// }
+
+
+// `
 /**
  *  THIS PEACE OF CODE IS REPLACED IN DYNAMIC WAY WITHIN CSS ATTRIBUTE IN STYLED COMPONENT FUNCTION
  &.invalid input {
@@ -46,6 +47,8 @@ const FormControl = Styled.div`
 
   color: red;
 
+
+  /* CHECK THE STYLED COMPONENT SYNTAX AND LOGIC .76 & .77 FOR CLARIFICATION 
  */
 
 
@@ -75,10 +78,10 @@ const CourseInput = props => {
 
   return (
     <form onSubmit={formSubmitHandler}> {/* calling formSubmitHandler function once we click submit 'Add Goal' button */}
-      <FormControl invalid={!isValid}> {/* CHECK THE STYLED COMPONENT SYNTAX AND LOGIC .76 & .77 FOR CLARIFICATION */}
+      <div className={`${styles['form-control']} ${!isValid && styles.invalid}`}> 
         <label>Course Goal</label>
         <input type="text" onChange={goalInputChangeHandler} />
-      </FormControl>
+      </div>
       <Button type="submit">Add Goal</Button>
     </form>
   );
@@ -95,3 +98,16 @@ export default CourseInput;
   2. Once we are satisfied with value that we want to submit, onAddGoal will submit the enteredValue
 
 */
+
+/*
+ 
+<div className={`${styles['form-control']} ${!isValid && styles.invalid}`}>
+
+'styles' are nothing more than regular JS object
+
+{`${styles['form-control']} => how we access classes in CSS that have dashees
+
+${!isValid && styles.invalid}`} => if isValid state is false, add invalid class to styles object
+
+  
+ */
