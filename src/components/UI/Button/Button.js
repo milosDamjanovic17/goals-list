@@ -33,7 +33,7 @@ import styles from './Button.module.css';
 // `;
 
 
-// approach using JSX syntax
+// approach using JSX syntax with CSS module, prefered way
 
 const Button = props => {
   return (

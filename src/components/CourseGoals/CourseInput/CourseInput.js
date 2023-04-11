@@ -54,6 +54,7 @@ import styles from './CourseInput.module.css';
 
 
 const CourseInput = props => {
+
   const [enteredValue, setEnteredValue] = useState('');
   const [isValid, setIsValid] = useState(true);
 
@@ -100,6 +101,11 @@ export default CourseInput;
 */
 
 /*
+
+using css modules, we firstly rename desired css file to xxxx.module.css, and then
+import it like for an example => import styles from './CourseInput.module.css';
+
+from then css modules act like objects
  
 <div className={`${styles['form-control']} ${!isValid && styles.invalid}`}>
 
